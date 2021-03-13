@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section></section>
+ <script>
+// pseudo-code :
+//  if n == 1 return n
+// else add n to n - 1 and place into variable total
+// n --
+// if n == 1 return total
+// else add n to n - 1 and add to total
+ 
+
+function sumTo(n) {
+     return sum_iter(0,1,n);
+ }
+
+ function sum_iter(sum,counter,max_count) {
+     return counter > max_count 
+            ? sum
+            : sum_iter(counter + sum,
+                        counter + 1,
+                        max_count);
+ }
+
+// recursion
+function sumToR(n) {
+    return n > 1
+           ? n + sumToR(n-1)
+           : 1
+}
+
+// for loop
+function sumToF(n) {
+    let total = 0;
+    let count = n
+
+    for (let i = 0; i < n; i++) {
+        total += count;
+        count--;
+    }
+    return total
+}
+
+// arithmetic progression
+// n(a1 + an) / 2
+function sumToA(n) {
+    return (n * (1 + n)) / 2
+}
+
+
+
+const section = document.querySelector('section')
+section.textContent = sumTo(5)
+</script>   
+</body>
+</html>
