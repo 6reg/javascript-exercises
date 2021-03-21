@@ -13,10 +13,24 @@ function sum (arr) {
  	return total 
 }
 
+function sum(arr) {
+	return arr.reduce((total, current) => total + current, 0);
+}
+
 function multiply (arr) {
 	let total = arr.reduce((a,b) => a*b, 1)
 	return total
 
+}
+
+function multiply(arr) {
+	return arr.length 
+		? arr.reduce((accumulator, nextItem) => accumulator * nextItem)
+		: 0; 
+}
+
+function power(a, b) {
+	return Math.pow(a,b);
 }
 
 function power(a,b) {
@@ -40,6 +54,22 @@ function factorial(a) {
 			}
 		return total
 	}	
+
+function factorial(n) {
+	if (n == 0) return 1;
+	let product = 1;
+	for (let i = n; i > 0; i--) {
+		product *= i;
+	}
+}
+
+function recursiveFactorial(n) {
+	if (n==0){
+		return 1;
+	}
+	return n * recursiveFactorial (n -1)
+}
+
 =======
 function add (x, y) {
 return x + y	
